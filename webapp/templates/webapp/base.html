@@ -15,7 +15,7 @@
 
   </head>
   <body>
-    <div class="head-wrapper">
+    <div id="head-wrapper" class="head-wrapper">
       <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
           <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
@@ -23,11 +23,11 @@
           </a>
   
           <ul id="nav" class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-            <li class="nav-item"><a href="#our-services-section" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Support</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            <li class="nav-item"><button class="nav-link active">Home</button></li>
+            <li class="nav-item"><button onclick="scrollToElement('our-services-section')" class="nav-link">Services</button></li>
+            <li class="nav-item"><button class="nav-link">Support</button></li>
+            <li class="nav-item"><button class="nav-link">About</button></li>
+            <li class="nav-item"><button class="nav-link">Contact</button></li>
           </ul>
         </header>
       </div>
@@ -42,11 +42,11 @@
         <div class="col-md py-4">
           <h1 class="fs-1 fw-semibold color-green-dark">Quick Links</h1>
           <div class="footer-links">
-            <a href="#"><div>Home</div></a>
-            <a href="#our-services-section"><div>Services</div></a>
-            <a href="#"><div>Support</div></a>
-            <a href="#"><div>About</div></a>
-            <a href="#"><div>Contact</div></a>
+            <a><div onclick="">Home</div></a>
+            <a><div onclick="scrollToElement('our-services-section')">Services</div></a>
+            <a><div onclick="">Support</div></a>
+            <a><div onclick="">About</div></a>
+            <a><div onclick="">Contact</div></a>
           </div>
         </div>
         

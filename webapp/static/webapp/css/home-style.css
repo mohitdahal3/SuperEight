@@ -28,6 +28,7 @@
 
 .service-text-column > p{
     text-align: center;
+    font-size: 1.2em;
 }
 
 @media (min-width: 992px) {
@@ -62,7 +63,7 @@
 }
 
 .service-icon-column > span{
-    font-size: 10em;
+    font-size: 7em;
 }
 
 .service-text-column{
@@ -75,12 +76,25 @@
     .our-services-section{
         padding: 2em 3em;
     }
+
+    .service-text-column > p{
+        font-size: 1.275em;
+    }
+    .service-icon-column > span{
+        font-size: 8.5em;
+    }
     
 }
 
 @media (min-width: 992px) {
     .our-services-section{
         padding: 2em 5em;
+    }
+    .service-text-column > p{
+        font-size: calc(1.275rem + .3vw)
+    }
+    .service-icon-column > span{
+        font-size: 10em;
     }
     
 }
