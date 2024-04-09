@@ -60,8 +60,15 @@ function scrollToElement(elementId) {
     if (element) {
         let elementPosition = element.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
-        top: elementPosition - document.getElementById("head-wrapper").offsetHeight,
-        behavior: 'smooth' // Smooth scrolling
+            top: elementPosition - document.getElementById("head-wrapper").offsetHeight,
+            behavior: 'smooth' // Smooth scrolling
         });
     }
+}
+
+function scrollToTop(){
+    window.scrollTo({
+        top:0,
+        behavior: 'smooth' 
+    })
 }

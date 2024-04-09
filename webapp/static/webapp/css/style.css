@@ -70,8 +70,9 @@
 .nav-link{
     font-size: 1.3em;
     position: relative;
-    background-color: white;
+    background-color: #ffffff;
     margin: 0 0.1rem;
+    margin-bottom: 0.2em;
     padding: 0.5rem 0.8rem;
     transition-duration: 250ms;
     transition-property: all;
@@ -83,6 +84,11 @@
     }
     .nav-link{
         font-size: 1.15em;
+    }
+}
+@media(min-width: 479px){
+    .nav-link{
+        margin: 0 0.1rem 0 0.1rem;
     }
 }
 
