@@ -1,17 +1,50 @@
-
+let headWrapper = document.getElementById('head-wrapper')
+let nav = document.getElementById("nav")
+let fixedNav = document.getElementById("fixed-nav")
 let imageLink = document.getElementById('nav-image-link')
-let options={}
-let observer = new IntersectionObserver((entries, observer)=>{
+let carousel = document.getElementById("main-slider")
+
+let navElements = [
+    document.querySelectorAll(".nav-link-home"),
+    document.querySelectorAll(".nav-link-services"),
+    document.querySelectorAll(".nav-link-support"),
+    document.querySelectorAll(".nav-link-about"),
+    document.querySelectorAll(".nav-link-contact")
+]
+
+
+
+let navoptions={}
+let navobserver = new IntersectionObserver((entries, navobserver)=>{
     entries.forEach(entry => {
         if(entry.isIntersecting){
-            document.getElementById("nav").classList.remove('fixed-top')
+            // nav.classList.remove('fixed-top')
+            nav.classList.remove('visibility-hidden')
+            fixedNav.classList.add('d-none')
+
         }else{
-            document.getElementById("nav").classList.add('fixed-top')
+            // nav.classList.add('fixed-top')
+            nav.classList.add('visibility-hidden')
+            fixedNav.classList.remove('d-none')
+
         }
     });
-} , options)
-observer.observe(imageLink)
+} , navoptions)
+navobserver.observe(imageLink)
 
+carouseloptions={
+    rootMargin: `-${headWrapper.offsetHeight}px`
+}
+let carouselObserver = new IntersectionObserver((entries, carouselObserver)=>{
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            
+        }else{
+            console.log("Not Intersecting");
+        }
+    });
+} , carouseloptions)
+carouselObserver.observe(carousel)
 
 
 function scrollToElement(elementId) {
@@ -19,7 +52,7 @@ function scrollToElement(elementId) {
     if (element) {
         let elementPosition = element.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
-            top: elementPosition - document.getElementById("head-wrapper").offsetHeight,
+            top: elementPosition - headWrapper.offsetHeight,
             behavior: 'smooth' // Smooth scrolling
         });
     }
@@ -30,4 +63,9 @@ function scrollToTop(){
         top:0,
         behavior: 'smooth' 
     })
+}
+
+
+function addActiveClass(index , navElements){
+    
 }

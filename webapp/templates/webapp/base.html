@@ -23,14 +23,24 @@
           </a>
   
           <ul id="nav" class="nav nav-pills">
-            <li class="nav-item"><button onclick="scrollToTop()" class="nav-link active">Home</button></li>
-            <li class="nav-item"><button onclick="scrollToElement('our-services-section')" class="nav-link">Services</button></li>
-            <li class="nav-item"><button class="nav-link">Support</button></li>
-            <li class="nav-item"><button class="nav-link">About</button></li>
-            <li class="nav-item"><button class="nav-link">Contact</button></li>
+            <li class="nav-item"><button class="nav-link nav-link-home active" onclick="scrollToTop()">Home</button></li>
+            <li class="nav-item"><button class="nav-link nav-link-services" onclick="scrollToElement('our-services-section')">Services</button></li>
+            <li class="nav-item"><button class="nav-link nav-link-support">Support</button></li>
+            <li class="nav-item"><button class="nav-link nav-link-about">About</button></li>
+            <li class="nav-item"><button class="nav-link nav-link-contact">Contact</button></li>
           </ul>
         </header>
       </div>
+    </div>
+
+    <div id="fixed-nav" class="container-fluid fixed-top d-none">
+      <ul class="nav nav-pills w-100">
+        <li class="nav-item"><button class="nav-link nav-link-home active" onclick="scrollToTop()">Home</button></li>
+        <li class="nav-item"><button class="nav-link nav-link-services" onclick="scrollToElement('our-services-section')">Services</button></li>
+        <li class="nav-item"><button class="nav-link nav-link-support">Support</button></li>
+        <li class="nav-item"><button class="nav-link nav-link-about">About</button></li>
+        <li class="nav-item"><button class="nav-link nav-link-contact">Contact</button></li>
+      </ul>
     </div>
 
     {% block main %}{% endblock main %}

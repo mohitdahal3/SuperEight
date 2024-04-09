@@ -68,9 +68,13 @@
     position: fixed;
     top: 0;
     background-color: white;
-    width: 100%;
-    padding: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     box-shadow: 0 0 10px 0 gray;
+}
+
+.visibility-hidden{
+    visibility: hidden !important;
 }
 
 .logo-img{
