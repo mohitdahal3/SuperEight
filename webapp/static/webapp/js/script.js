@@ -38,7 +38,7 @@ carouseloptions={
 let carouselObserver = new IntersectionObserver((entries, carouselObserver)=>{
     entries.forEach(entry => {
         if(entry.isIntersecting){
-            addActiveClass(0 , navElements)
+            addActiveClass(0 , navElements) // work to be done!
         }else{
             addActiveClass(1 , navElements)
         }
