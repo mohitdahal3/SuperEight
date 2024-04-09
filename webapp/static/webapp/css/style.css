@@ -50,12 +50,27 @@
 
 
 
-
 .head-wrapper{
-    position: sticky;
+    position: static;
     top: 0;
     background-color: white;
     z-index: 999;
+    box-shadow: 0 0 10px 0 gray;
+}
+
+@media(min-width:992px){
+    .head-wrapper{
+        position: sticky;
+    }
+}
+
+.fixed-top{
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 0 10px 0 gray;
 }
 
 .logo-img{
