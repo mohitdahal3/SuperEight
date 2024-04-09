@@ -38,9 +38,9 @@ carouseloptions={
 let carouselObserver = new IntersectionObserver((entries, carouselObserver)=>{
     entries.forEach(entry => {
         if(entry.isIntersecting){
-            
+            addActiveClass(0 , navElements)
         }else{
-            console.log("Not Intersecting");
+            addActiveClass(1 , navElements)
         }
     });
 } , carouseloptions)
@@ -67,5 +67,13 @@ function scrollToTop(){
 
 
 function addActiveClass(index , navElements){
-    
+    navElements.forEach((element , counter)=>{
+        if(index == counter){
+            element[0].classList.add("active")
+            element[1].classList.add("active")
+        }else{
+            element[0].classList.remove("active")
+            element[1].classList.remove("active")
+        }
+    })
 }
