@@ -2,7 +2,9 @@ let headWrapper = document.getElementById('head-wrapper')
 let nav = document.getElementById("nav")
 let fixedNav = document.getElementById("fixed-nav")
 let imageLink = document.getElementById('nav-image-link')
-let carousel = document.getElementById("main-slider")
+let carousel = document.getElementById("carousel")
+let elementsToBeObserved = document.querySelectorAll(".to-be-observed")
+
 
 let navElements = [
     document.querySelectorAll(".nav-link-home"),
@@ -31,19 +33,31 @@ let navobserver = new IntersectionObserver((entries, navobserver)=>{
 } , navoptions)
 navobserver.observe(imageLink)
 
-carouseloptions={
+let elementsOnScreen = new Set()
+
+let contentsOptions={
     rootMargin: `-35%`
 }
-let carouselObserver = new IntersectionObserver((entries, carouselObserver)=>{
+let contentsObserver = new IntersectionObserver((entries, contentsObserver)=>{
     entries.forEach(entry => {
-        if(entry.isIntersecting){
-            addActiveClass(0 , navElements) // work to be done!
-        }else{
-            addActiveClass(1 , navElements)
+        if (entry.isIntersecting) {
+            let index = getIndexFromTarget(entry.target.id);
+            if (index !== undefined) {
+                elementsOnScreen.add(index);
+            }
+        } else {
+            let index = getIndexFromTarget(entry.target.id);
+            if (index !== undefined) {
+                elementsOnScreen.delete(index);
+            }
         }
     });
-} , carouseloptions)
-carouselObserver.observe(carousel)
+    changeActiveOnSetUpdate(elementsOnScreen);
+} , contentsOptions)
+
+elementsToBeObserved.forEach((element)=>{
+    contentsObserver.observe(element)
+})
 
 
 function scrollToElement(elementId) {
@@ -64,6 +78,24 @@ function scrollToTop(){
     })
 }
 
+function getIndexFromTarget(targetId){
+    switch (targetId) {
+        case 'carousel':
+            return 0
+
+        case 'our-services':
+            return 1
+
+        case 'packages':
+            return 2
+
+        case 'contact':
+            return 3
+    
+        default:
+            return
+    }
+}
 
 function addActiveClass(index , navElements){
     navElements.forEach((element , counter)=>{
@@ -75,6 +107,11 @@ function addActiveClass(index , navElements){
             element[1].classList.remove("active")
         }
     })
+}
+
+function changeActiveOnSetUpdate(set){
+    let sortedSet = new Set([...set].sort((a, b) => a - b));
+    addActiveClass([...sortedSet][0] , navElements)
 }
 
 
