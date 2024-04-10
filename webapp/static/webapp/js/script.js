@@ -7,8 +7,7 @@ let carousel = document.getElementById("main-slider")
 let navElements = [
     document.querySelectorAll(".nav-link-home"),
     document.querySelectorAll(".nav-link-services"),
-    document.querySelectorAll(".nav-link-support"),
-    document.querySelectorAll(".nav-link-about"),
+    document.querySelectorAll(".nav-link-packages"),
     document.querySelectorAll(".nav-link-contact")
 ]
 
@@ -33,7 +32,7 @@ let navobserver = new IntersectionObserver((entries, navobserver)=>{
 navobserver.observe(imageLink)
 
 carouseloptions={
-    rootMargin: `-${headWrapper.offsetHeight}px`
+    rootMargin: `-35%`
 }
 let carouselObserver = new IntersectionObserver((entries, carouselObserver)=>{
     entries.forEach(entry => {
@@ -52,7 +51,7 @@ function scrollToElement(elementId) {
     if (element) {
         let elementPosition = element.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
-            top: elementPosition - headWrapper.offsetHeight,
+            top: elementPosition - (nav.offsetHeight + 40),
             behavior: 'smooth' // Smooth scrolling
         });
     }
@@ -76,4 +75,9 @@ function addActiveClass(index , navElements){
             element[1].classList.remove("active")
         }
     })
+}
+
+
+function redirectToCustomerLogin(){
+    window.open("https://selfcare.supereight.com.np", "_blank");
 }

@@ -78,7 +78,7 @@
 }
 
 .logo-img{
-    height: 80px;
+    height: 65px;
 }
 
 .nav{
@@ -87,27 +87,34 @@
 }
 
 .nav-link{
-    font-size: 1.3em;
+    font-size: 0.85em;
     position: relative;
     background-color: #ffffff;
     margin: 0 0.1rem;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.173em;
     padding: 0.5rem 0.8rem;
     transition-duration: 250ms;
     transition-property: all;
 }
 
-@media(max-width: 600px) {
-    .logo-img{
-        height: 65px;
-    }
+@media(min-width: 509px) {
     .nav-link{
-        font-size: 1.15em;
+        font-size: 1em;
     }
 }
-@media(min-width: 479px){
+
+@media(min-width: 768px) {
+    .logo-img{
+        height: 80px;
+    }
     .nav-link{
-        margin: 0 0.1rem 0 0.1rem;
+        font-size: 1.3em;
+    }
+}
+
+@media(min-width: 466px){
+    .nav-link{
+        margin: 0 0.1rem;
     }
 }
 

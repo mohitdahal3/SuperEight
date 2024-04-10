@@ -22,7 +22,7 @@
 
 
 .our-services-section{
-    padding: 2em 1.5em;
+    padding: 0.2em 1.5em;
 }
 
 
@@ -57,13 +57,13 @@
 .service-icon-column{
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.35em;
     justify-content: center;
     align-items: center;
 }
 
 .service-icon-column > span{
-    font-size: 7em;
+    font-size: 6em;
 }
 
 .service-text-column{
@@ -74,27 +74,27 @@
 
 @media (min-width: 768px) {
     .our-services-section{
-        padding: 2em 3em;
+        padding: 1em 3em;
     }
 
     .service-text-column > p{
         font-size: 1.275em;
     }
     .service-icon-column > span{
-        font-size: 8.5em;
+        font-size: 8em;
     }
     
 }
 
 @media (min-width: 992px) {
     .our-services-section{
-        padding: 2em 5em;
+        padding: 1em 5em;
     }
     .service-text-column > p{
         font-size: calc(1.275rem + .3vw)
     }
     .service-icon-column > span{
-        font-size: 10em;
+        font-size: 9.5em;
     }
     
 }
@@ -123,4 +123,41 @@
         scale: 1;
         opacity: 1;
     }
+}
+
+
+.table {
+    --bs-table-hover-bg: rgb(56 180 6 / 56%);
+}
+th , td{
+    font-size: 0.65em;
+}
+
+@media(min-width:466px){
+    th , td{
+        font-size: 0.8em;
+    }
+}
+@media(min-width:577px){
+    th , td{
+        font-size: 0.92em;
+    }
+}
+@media(min-width:768px){
+    th , td{
+        font-size: 1.07em;
+    }
+}
+@media(min-width:992px){
+    th , td{
+        font-size: 1.3em;
+    }
+}
+
+.packages-table{
+    border: 1px solid gray;
+    border-radius: 0.7em;
+    margin-top: 2em;
+    padding: 1em 1em;
+    box-shadow: 0 0 15px -7px rgb(10, 124, 12);
 }

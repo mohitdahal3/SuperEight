@@ -25,9 +25,9 @@
           <ul id="nav" class="nav nav-pills">
             <li class="nav-item"><button class="nav-link nav-link-home active" onclick="scrollToTop()">Home</button></li>
             <li class="nav-item"><button class="nav-link nav-link-services" onclick="scrollToElement('our-services-section')">Services</button></li>
-            <li class="nav-item"><button class="nav-link nav-link-support">Support</button></li>
-            <li class="nav-item"><button class="nav-link nav-link-about">About</button></li>
+            <li class="nav-item"><button class="nav-link nav-link-packages">Packages</button></li>
             <li class="nav-item"><button class="nav-link nav-link-contact">Contact</button></li>
+            <li class="nav-item"><button class="nav-link bg-dark text-light" onclick="redirectToCustomerLogin()">Customer Login</button></li>
           </ul>
         </header>
       </div>
@@ -37,13 +37,19 @@
       <ul class="nav nav-pills w-100">
         <li class="nav-item"><button class="nav-link nav-link-home active" onclick="scrollToTop()">Home</button></li>
         <li class="nav-item"><button class="nav-link nav-link-services" onclick="scrollToElement('our-services-section')">Services</button></li>
-        <li class="nav-item"><button class="nav-link nav-link-support">Support</button></li>
-        <li class="nav-item"><button class="nav-link nav-link-about">About</button></li>
+        <li class="nav-item"><button class="nav-link nav-link-packages">Packages</button></li>
         <li class="nav-item"><button class="nav-link nav-link-contact">Contact</button></li>
+        <li class="nav-item"><button class="nav-link bg-dark text-light" onclick="redirectToCustomerLogin()">Customer Login</button></li>
       </ul>
     </div>
 
+
+
+
     {% block main %}{% endblock main %}
+
+
+
 
 
     <div class="sFooter container">
@@ -54,9 +60,9 @@
           <div class="footer-links">
             <a><div onclick="scrollToTop()">Home</div></a>
             <a><div onclick="scrollToElement('our-services-section')">Services</div></a>
-            <a><div onclick="">Support</div></a>
-            <a><div onclick="">About</div></a>
+            <a><div onclick="">Packages</div></a>
             <a><div onclick="">Contact</div></a>
+            <a><div onclick="redirectToCustomerLogin()" class="color-green">Customer Login</div></a>
           </div>
         </div>
         
