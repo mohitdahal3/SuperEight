@@ -23,10 +23,10 @@
           </a>
   
           <ul id="nav" class="nav nav-pills">
-            <li class="nav-item"><button class="nav-link nav-link-home active" onclick="scrollToTop()">Home</button></li>
+            <li class="nav-item"><button class="nav-link nav-link-home" onclick="scrollToTop()">Home</button></li>
             <li class="nav-item"><button class="nav-link nav-link-services" onclick="scrollToElement('our-services')">Services</button></li>
             <li class="nav-item"><button class="nav-link nav-link-packages" onclick="scrollToElement('packages')">Packages</button></li>
-            <li class="nav-item"><button class="nav-link nav-link-contact">Contact</button></li>
+            <li class="nav-item"><button class="nav-link nav-link-contact" onclick="scrollToElement('contact')">Contact</button></li>
             <li class="nav-item"><button class="nav-link bg-dark text-light" onclick="redirectToCustomerLogin()">Customer Login</button></li>
           </ul>
         </header>
@@ -35,10 +35,10 @@
 
     <div id="fixed-nav" class="container-fluid fixed-top d-none">
       <ul class="nav nav-pills w-100">
-        <li class="nav-item"><button class="nav-link nav-link-home active" onclick="scrollToTop()">Home</button></li>
+        <li class="nav-item"><button class="nav-link nav-link-home" onclick="scrollToTop()">Home</button></li>
         <li class="nav-item"><button class="nav-link nav-link-services" onclick="scrollToElement('our-services')">Services</button></li>
         <li class="nav-item"><button class="nav-link nav-link-packages" onclick="scrollToElement('packages')">Packages</button></li>
-        <li class="nav-item"><button class="nav-link nav-link-contact">Contact</button></li>
+        <li class="nav-item"><button class="nav-link nav-link-contact" onclick="scrollToElement('contact')">Contact</button></li>
         <li class="nav-item"><button class="nav-link bg-dark text-light" onclick="redirectToCustomerLogin()">Customer Login</button></li>
       </ul>
     </div>
@@ -61,7 +61,7 @@
             <a><div onclick="scrollToTop()">Home</div></a>
             <a><div onclick="scrollToElement('our-services')">Services</div></a>
             <a><div onclick="scrollToElement('packages')">Packages</div></a>
-            <a><div onclick="">Contact</div></a>
+            <a><div onclick="scrollToElement('contact')">Contact</div></a>
             <a><div onclick="redirectToCustomerLogin()" class="color-green">Customer Login</div></a>
           </div>
         </div>
