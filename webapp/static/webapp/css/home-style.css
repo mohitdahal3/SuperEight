@@ -2,7 +2,7 @@
 .main-carousel-image{
     width: 92%;
     margin: auto;
-    border-radius: 1.4em;
+    border-radius: 1.25em;
 }
 
 .underline-highlited{
@@ -21,11 +21,6 @@
 }
 
 
-.our-services-section{
-    padding: 0em 1.5em;
-}
-
-
 .service-text-column > p{
     text-align: center;
     font-size: 1.2em;
@@ -35,16 +30,13 @@
     .service-text-column > p{
         text-align: left;
     }
-
+    
     .services-list > div:nth-child(even) > .service-text-column > p{
         text-align: right;
     }
 }
 
-
 .service-card{
-    padding: 1em 0em;
-    margin: 1em 0 3em 0;
     border: 1px solid rgb(40, 123, 13);
     border-radius: 0.5em;
     box-shadow: 0 0 10px -4px rgb(55, 150, 0);
@@ -53,7 +45,6 @@
 .service-card:hover{
     box-shadow: 0 0 20px -2px rgb(55, 150, 0);
 }
-
 .service-icon-column{
     display: flex;
     flex-direction: column;
@@ -72,11 +63,13 @@
 }
 
 
-@media (min-width: 768px) {
-    .our-services-section{
-        padding: 1em 3em;
-    }
+.packages-table{
+    border: 1px solid gray;
+    border-radius: 0.7em;
+    box-shadow: 0 0 15px -7px rgb(10, 124, 12);
+}
 
+@media (min-width: 768px) {
     .service-text-column > p{
         font-size: 1.275em;
     }
@@ -87,19 +80,169 @@
 }
 
 @media (min-width: 992px) {
-    .our-services-section{
-        padding: 1em 5em;
-    }
     .service-text-column > p{
         font-size: calc(1.275rem + .3vw)
     }
     .service-icon-column > span{
         font-size: 9.5em;
     }
-    
+}
+
+.table {
+    --bs-table-hover-bg: rgb(56 180 6 / 56%);
 }
 
 
+
+/* Responsive section For margin and padding and table fonts for some reason */
+
+
+.our-services-section{
+    padding: 1em 2em;
+}
+
+.services-list{
+    margin-top: 1em;
+}
+
+.service-card{
+    padding: 0;
+    margin-bottom: 1.5em;
+}
+
+.packages-section{
+    padding: 0 1em;
+    margin-bottom: 2em;
+}
+
+.packages-table{
+    padding: 0.5em 0.1em;
+}
+
+
+.head-office , .contact-office{
+    margin: 1em 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 1px solid gray;
+    border-radius: 0.5em;
+}
+
+.office-details > p{
+    font-size: 1.25em;
+}
+
+
+.section-divider-hr{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+th , td{
+    font-size: 0.65em;
+}
+
+@media(min-width:466px){
+
+    .our-services-section{
+        padding: 1em 2em;
+    }
+    .services-list{
+        margin-top: 2em;
+    }
+    .service-card{
+        margin-bottom: 2em;
+    }
+    
+    .packages-section{
+        padding: 0 1em;
+        padding-bottom: 1em;
+        margin-bottom: 2em;
+    }
+    
+    th , td{
+        font-size: 0.8em;
+    }
+}
+
+
+@media(min-width:577px){
+
+    .our-services-section{
+        padding: 1em 2em;
+    }
+    
+    .service-card{
+        padding: 1em 0;
+        margin-bottom: 2.5em;
+    }
+
+    
+    .section-divider-1{
+        margin-top: 3em;
+    }
+
+
+    th , td{
+        font-size: 0.92em;
+    }
+}
+@media(min-width:768px){
+
+    .our-services-section{
+        padding-left: 3em;
+        padding-right: 3em;
+        padding-bottom: 0.2em;
+    }
+    .services-list{
+        margin-top: 2.2em;
+    }
+    
+    .service-card{
+        margin-bottom: 3em;
+    }
+
+    .packages-section{
+        margin-top: 1.7em;
+    }
+
+
+
+    th , td{
+        font-size: 1.07em;
+    }
+}
+@media(min-width:992px){
+
+
+    .our-services-section{
+        padding-left: 4em;
+        padding-right: 4em;
+        padding-bottom: 0em;
+    }
+    
+    .service-card{
+        margin-bottom: 4em;
+    }
+
+    .packages-table{
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .office-details > p{
+        font-size: 1.5em;
+    }
+
+    th , td{
+        font-size: 1.3em;
+    }
+}
+
+
+
+
+/* Service card animation */
 .service-card{
     scale: 0;
     opacity: 0.5;
@@ -123,41 +266,4 @@
         scale: 1;
         opacity: 1;
     }
-}
-
-
-.table {
-    --bs-table-hover-bg: rgb(56 180 6 / 56%);
-}
-th , td{
-    font-size: 0.65em;
-}
-
-@media(min-width:466px){
-    th , td{
-        font-size: 0.8em;
-    }
-}
-@media(min-width:577px){
-    th , td{
-        font-size: 0.92em;
-    }
-}
-@media(min-width:768px){
-    th , td{
-        font-size: 1.07em;
-    }
-}
-@media(min-width:992px){
-    th , td{
-        font-size: 1.3em;
-    }
-}
-
-.packages-table{
-    border: 1px solid gray;
-    border-radius: 0.7em;
-    margin-top: 2em;
-    padding: 1em 1em;
-    box-shadow: 0 0 15px -7px rgb(10, 124, 12);
 }

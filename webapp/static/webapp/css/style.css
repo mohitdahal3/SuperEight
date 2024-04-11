@@ -144,8 +144,19 @@
 
 
 .sFooter{
-    padding: 2em 3em 4em 3em;
-    border-top: 1px solid rgb(0, 88, 0);
+    padding: 1em 3em 4em 3em;
+    position: relative;
+    margin-top: 1.5em;
+}
+.sFooter::before{
+    content: '';
+    position: absolute;
+    background-color: #09642d;
+    height: 1px;
+    width: 90vw;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
 }
 
 .footer-links , .footer-head-office-details{
@@ -158,12 +169,22 @@
     text-decoration: none;
     color: black;
     cursor: default;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .footer-head-office-details > p{
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 0;
+}
+
+@media(min-width:600px){
+    .footer-links > a {
+        font-size: 1.5em;
+    }
+    
+    .footer-head-office-details > p{
+        font-size: 1.5em;
+    }
 }
 
 .footer-links > a > div {

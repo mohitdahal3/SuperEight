@@ -16,7 +16,7 @@
     <div class="home-main">
 
 
-        <div id="carousel" class="carousel slide to-be-observed" data-bs-ride="carousel">
+        <div id="carousel" class="carousel slide to-be-observed mb-4" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -42,7 +42,7 @@
 
         </div>
 
-        <hr class="mb-3 mx-4 mt-5">
+        <hr class="section-divider-hr section-divider-1">
  
 
         <div id="our-services" class="our-services-section to-be-observed">
@@ -89,9 +89,9 @@
         </div>
 
 
-        <hr class="mb-3 mx-4">
+        <hr class="section-divider-hr">
 
-        <div id="packages" class="packages-section container mt-4 mb-5 to-be-observed">
+        <div id="packages" class="packages-section container to-be-observed">
           <h1 class="display-5 fw-bold text-align-center mb-3"><div class="underline-highlited d-inline">Packages</div></h1>
           
           {% if myRows %}
@@ -132,13 +132,79 @@
 
         </div>
 
-        <hr class="my-4 mx-4">
+        <hr class="section-divider-hr">
 
-        <div id="contact" class="contact-section container to-be-observed my-4">
+        <div id="contact" class="contact-section container to-be-observed">
           <h1 class="display-5 fw-bold text-align-center mb-3"><div class="underline-highlited d-inline">Contact Us</div></h1>
           
+
+
+
+          <div class="head-office row">
+            <div class="col-md-7 office-details d-flex justify-content-center align-items-center flex-column">
+              <h1 class="fs-2 fw-semibold text-align-center">Head Office:</h1>
+              <p class="text-align-center d-flex justify-content-center align-items-center"> 
+                <span class="material-symbols-outlined">location_on</span> 
+                Bhimad - 06 Nagarpalika Chwok Tanahu, Nepal
+              </p>
+              <p class="text-align-center d-flex justify-content-center align-items-center"> 
+                <span class="material-symbols-outlined">call</span> 
+                9801575750 (Toll Free)
+              </p>
+              <p class="text-align-center d-flex justify-content-center align-items-center"> 
+                <span class="material-symbols-outlined">call</span> 
+                065-572460
+              </p>
+            </div>
+            <div class="col-md-5 office-map">
+              <iframe id="head-office-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3523.538191485517!2d84.0823612!3d27.9774261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995b10ed1f4663f%3A0x513e3693a82fb213!2sSupereight%20communication%20pvt%20Ltd.!5e0!3m2!1sen!2snp!4v1712842552720!5m2!1sen!2snp" style="border:0; width:100%; height:100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+            
+
+
+
+          <div class="contact-office row">
+            <div class="col-md-7 office-details d-flex justify-content-center align-items-center flex-column">
+              <h1 class="fs-2 fw-semibold text-align-center">Contact Office:</h1>
+              <p class="text-align-center d-flex justify-content-center align-items-center"> 
+                <span class="material-symbols-outlined">location_on</span> 
+                Baudikali - 04, Nawalpur
+              </p>
+              <p class="text-align-center d-flex justify-content-center align-items-center"> 
+                <span class="material-symbols-outlined">call</span> 
+                9802831666
+              </p>
+            </div>
+            <div class="col-md-5 office-map">
+              <iframe id="contact-office-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.6843283064104!2d84.0782792!3d27.850241499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995b3a877f1e58b%3A0x4c269df38ad1aa09!2sSupereight%20Networks!5e0!3m2!1sen!2snp!4v1712849404354!5m2!1sen!2snp" style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+
         </div>
         
       </div>
 
 {% endblock main %}
+
+
+{% block js %}
+
+      <script>
+        function setMapHeight() {
+          var headMap = document.getElementById('head-office-map');
+          var headWidth = headMap.offsetWidth; // Get the width of the iframe
+          headMap.style.height = headWidth + 'px'; // Set height equal to width
+          
+          var contactMap = document.getElementById('contact-office-map');
+          var contactWidth = contactMap.offsetWidth; // Get the width of the iframe
+          contactMap.style.height = contactWidth + 'px'; // Set height equal to width
+        }
+
+        // Call setMapHeight initially and whenever the window is resized
+        setMapHeight();
+        window.addEventListener('resize', setMapHeight);
+      </script>
+
+{% endblock js %}
