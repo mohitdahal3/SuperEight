@@ -12,3 +12,12 @@ class Row(models.Model):
 
     def __str__(self):
         return f"Row"
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=150)
+    email = models.CharField(max_length=150 , blank=True , null=True)
+    message = models.TextField(max_length=2000)
+    addedDate = models.DateField(verbose_name="Date this was sent" , auto_now_add=True)
+
+    def __str__(self):
+        return f"Message by {self.name}"

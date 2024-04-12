@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from webapp.models import Row
+from webapp.models import Row, ContactMessage
 
 class RowAdmin(admin.ModelAdmin):
     list_display = ('get_custom_index', 'column1', 'column2', 'column3', 'column4', 'column5' , 'column6' , 'column7')
@@ -22,3 +22,9 @@ class RowAdmin(admin.ModelAdmin):
     get_custom_index.short_description = 'Index'
 
 admin.site.register(Row , RowAdmin)
+
+
+
+class ContactMessageAdmin(admin.ModelAdmin):
+    readonly_fields = ('addedDate',)
+admin.site.register(ContactMessage , ContactMessageAdmin)

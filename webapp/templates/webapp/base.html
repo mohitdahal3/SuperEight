@@ -45,6 +45,16 @@
 
 
 
+      <!-- alert -->
+      {% for message in messages %}
+      <div style="position: fixed; top: 6em; left:5px; box-shadow:0 0 8px 0 gray; text-align: left; z-index:999999;"
+          class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          <strong>{% if message.tags == "danger" %} ERROR {% else %} {{ message.tags|upper }} {% endif %} :</strong> {{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+
+
 
     {% block main %}{% endblock main %}
 

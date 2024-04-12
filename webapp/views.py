@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from webapp.models import Row
+from django.shortcuts import render, redirect, HttpResponse
+from webapp.models import Row, ContactMessage
+from django.contrib import messages
+import re
 
 # Create your views here.
 def home(request):
@@ -35,3 +37,39 @@ def home(request):
 
         
     return render(request , 'webapp/home.html' , dictionary)
+
+
+def sendMessage(request):
+    if request.method == "POST":
+        _name = request.POST.get('name' , "")
+        _email = request.POST.get('email' , "")
+        _message = request.POST.get('message' , "")
+
+        if(_name.strip() == ""):
+            messages.error(request , "Name can not be blank.")
+            return redirect("/")
+        elif(validate_email_canbeempty(_email) == False):
+            messages.error(request , "Enter a valid email.")
+            return redirect("/")
+        else:
+            try:
+                newMessage = ContactMessage(name = _name , email = _email , message = _message)
+                newMessage.save()
+                messages.success(request , "Message sent Successfully.")
+                return redirect("/")
+            except:
+                messages.error(request , "An unexpected error has occurred.")
+                return redirect("/")
+
+    return HttpResponse("404 Not Found!")
+
+
+
+
+
+def validate_email_canbeempty(email):
+    if (email.strip() == "" or email is None):
+        return True
+    else:
+        pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+        return re.match(pattern, email) is not None

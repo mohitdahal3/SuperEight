@@ -24,6 +24,16 @@
 }
 
 
+.alert > .btn-close:focus{
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    border-color: #01932f;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #0be45077;
+}
+
 
 /************ scrolbar stuff ************/
 ::-webkit-scrollbar {

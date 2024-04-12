@@ -3,6 +3,7 @@
 {% load static %}
 {% block css %}
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="{% static 'webapp/css/home-style.css' %}">
 
@@ -181,9 +182,50 @@
             </div>
           </div>
 
+          <div class="message-button-wrapper" data-bs-toggle="modal" data-bs-target="#contact-modal">
+            <button class="btn btn-success message-button">Send Us a Message</button>
+          </div>
 
         </div>
         
+      </div>
+
+      <!--Contact form modal-->
+      <div class="modal fade" id="contact-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="contact-modal-label">Send Us a Messaage!</h1>
+            </div>
+            <div class="modal-body">
+
+
+              <form action="/send-message" method="post">
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                  <input required name="name" type="text" class="form-control" id="contact-name" placeholder="Full Name">
+                  <label for="contact-name">Full Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input name="email" type="email" class="form-control" id="contact-email" placeholder="Email">
+                  <label for="contact-email">Email (Optional)</label>
+                </div>
+                <div class="form-floating">
+                  <textarea required name="message" class="form-control" placeholder="Leave a message here" id="contact-message"></textarea>
+                  <label for="contact-message">Message</label>
+                </div>
+                <button hidden id="from-submit" type="submit">Submit form</button>
+              </form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-success" onclick="submitContactForm()">Send</button>
+            </div>
+          </div>
+        </div>
       </div>
 
 {% endblock main %}
@@ -205,6 +247,14 @@
         // Call setMapHeight initially and whenever the window is resized
         setMapHeight();
         window.addEventListener('resize', setMapHeight);
+
+
+        function submitContactForm(){
+          let submitButton = document.getElementById("from-submit");
+          submitButton.click();
+        }
+
+
       </script>
 
 {% endblock js %}

@@ -267,3 +267,47 @@ th , td{
         opacity: 1;
     }
 }
+
+
+
+
+
+
+/* Message button style */
+
+.message-button{
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    overflow: hidden;
+    transition: all 0.2s linear 0s;
+}
+
+
+.message-button::before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 30px;
+    background-color: #054f22;
+    border-radius: 0 50% 50% 0;
+    transform: scale(0,1);
+    transform-origin: left center;
+    transition: all 0.2s linear 0s;
+}
+  
+.message-button:hover {
+    text-indent: 30px;
+}    
+.message-button:hover::before {
+    transform: scale(1,1);
+    text-indent: 0;
+}
